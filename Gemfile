@@ -1,54 +1,57 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
-gem "compass"
+# This order matters!
+# gem 'compass'
 gem 'haml'
-gem 'html5-boilerplate'
+gem 'haml-rails', :group => :development
+# LET'S NOT GO HERE -> gem 'html5-boilerplate'
 gem 'jquery-rails'
 gem 'coffee-script'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'sass-rails',   '~> 3.1.4'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
 end
+
+# provide simple configuration settings mechanism
+gem 'settingslogic'
 
 gem 'execjs'
-
 gem 'sqlite3'
+
 gem 'devise'
 gem 'omniauth', '>= 0.2.6'
-gem 'gravatar_image_tag'
-gem 'inherited_resources'
-gem 'rails3-generators'
-gem 'paperclip'
-gem 'uuidtools'
-gem "friendly_id" #, :git => 'git://github.com/norman/friendly_id.git', :branch => "3.x"
-gem 'formtastic', '~> 1.2.3'
-
-
-group :development do
-  gem 'sqlite3'
-end
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'friendly_id'
+gem 'carmen'          # used as a replacement for country_select and state_select and related forks
+gem 'formtastic'
+gem 'tabs_on_rails'
 
 group :test, :development do
-  gem "rspec"
-  gem "cucumber-rails"
-  gem "autotest"
-  gem "factory_girl_rails", "~> 1.1"
-  gem "faker"
+
+  # essential => see http://benscheirman.com/2011/04/using-guard-spork-with-mongoid-devise
+  gem 'rspec'
+  gem 'spork'
+  gem 'rb-fsevent'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'guard-pow'
+  gem 'cucumber-rails'
+  gem 'rspec-rails'
+  gem 'rspec-instafail'
+
+  # db, factory & code coverage
+  gem 'factory_girl_rails'
+  gem 'simplecov', '>= 0.4.2', :require => false, :group => :test
+  
+  # Niceties
+  gem 'growl'
+  gem 'faker'
   gem 'turn', :require => false
+
 end
