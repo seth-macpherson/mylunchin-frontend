@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20111221071453) do
   create_table "plates", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "chef",                                      :default => "Kathy Watson"
-    t.boolean  "vegitarean",                                :default => false
+    t.string   "chef",                                      :default => "Kathy"
+    t.boolean  "vegetarian",                                :default => false
     t.boolean  "gluten_free",                               :default => false
     t.decimal  "price",       :precision => 8, :scale => 2, :default => 0.0
     t.datetime "created_at"
