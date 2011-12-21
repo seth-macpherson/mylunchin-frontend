@@ -27,7 +27,7 @@
         .post.relative
           .post-image
             / %a{:href => "blog_post.html"}
-            %img{:alt => "", :height => "120", :src => "img/pictures/1w.jpg"}/
+            %img{:alt => "", :height => "120", :src => asset_path("plates/#{plate.id}.jpg")}
             %span.date
               %span.bold 
                 #{plate.created_at.strftime("%b %d")}
@@ -35,13 +35,14 @@
             %span.comments-nr
               %a{:href => "#"}
                 %span.bold #{number_to_currency(plate.price, :unit => "$")}
+                lunch
             / %span.comments-nr
             /   %a{:href => "#"}
             /     %span.bold #{rand(20)}
             /     remaining
           .post-entry
             %h1.title
-              %a{:href => "blog_post.html"} #{plate.name}
+              #{plate.name}
             %span.post-meta
               By
               %strong #{plate.chef}
@@ -49,10 +50,11 @@
               -#  %strong Photography
             %p #{plate.description}
             .absolute{:style => "bottom:52px"}
-              %input.button.light{:type => "submit", :value => "Add to Lunchbox"}
-            %span.dietary
-              = plate.vegetarian ? "Vegetarian" : ""
-              = plate.gluten_free ? "Gluten Free" : ""
+              %input.button.light{:type => "submit", :value => "See Options"}
+              - if plate.vegetarian
+                %span.highlight-light.dietary Vegetarian
+              - if plate.gluten_free
+                %span.highlight-light.dietary Gluten Free
             
       -# .post
       -#   .post-image

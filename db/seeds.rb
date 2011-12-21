@@ -15,7 +15,8 @@ plates = Plate.create!([{
   :name => "Soup and Salad",
   :description => "Salmon chowder with applewood smoked bacon and Yukon Gold potatoes, served with oyster crackers, and greens with muscatel vinaigrette, dressing on the side",
   :price => 10.00,
-  :chef => "Rainbow"
+  :chef => "Rainbow",
+  :gluten_free => true
 },{
   :name => "Full-meal Sandwich Box",
   :description => "Lunch includes sandwich, Kettle chips, pasta salad, house-made chocolate chip cookie",
