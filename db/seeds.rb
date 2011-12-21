@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+plates = Plate.create!([{
+  :name => "Today's Special",
+  :description => "Stacked Beef Enchiladas with house-made masa tortillas with red chili mole, cotjia cheese, cilantro, peruano beans",
+  :price => 12.00
+},{
+  :name => "Soup and Salad",
+  :description => "Salmon chowder with applewood smoked bacon and Yukon Gold potatoes, served with oyster crackers, and greens with muscatel vinaigrette, dressing on the side",
+  :price => 12.00
+},{
+  :name => "Full-meal Sandwich Box",
+  :description => "Lunch includes sandwich, Kettle chips, pasta salad, house-made chocolate chip cookie",
+  :price => 12.00
+},{
+  :name => "Nora's Cobb Salad",
+  :description => "Organic greens, smoked turkey breast, Rogue Creamery blue cheese, toasted hazelnuts, applewood smoked bacon, avocado,  house-pickled green tomatoes, creme fraiche dijon vinaigrette on the side, wedge of baguette",
+  :price => 12.00
+},{
+  :name => "Burmese Pork Curry",
+  :description => "Savory curry pork with seared vegetables on a bed of jasmine rice",
+  :price => 12.00
+}])
