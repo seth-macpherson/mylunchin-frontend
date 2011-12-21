@@ -1,5 +1,7 @@
 Mylunchin::Application.routes.draw do
 
+  resources :plates
+
   root :to => 'home#index'
 
   match "/about" => "home#about", :as => "about"
