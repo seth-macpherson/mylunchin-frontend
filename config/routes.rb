@@ -1,4 +1,12 @@
 Mylunchin::Application.routes.draw do
+
+  root :to => 'home#index'
+
+  match "/about" => "home#about", :as => "about"
+  match "/pending" => "home#pending", :as => "pending"
+  match "/blog" => redirect("http://norastable.wordpress.com/"), :as => "blog"
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

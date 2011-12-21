@@ -1,0 +1,100 @@
+/* 
+/
+/ CSS Style Switcher
+/ By Tauris
+/
+*/
+
+
+#switcher { 
+	position: fixed;
+	left: 0px;
+	top: 20px;
+	z-index: 9999;
+	background:#fff;
+	border:1px solid #ddd;
+	padding:10px 4px 10px 12px;	
+	width:160px;
+}
+
+#switcher form select {
+	width:148px;
+	padding:4px 6px;
+	border:1px solid #ccc;
+}
+
+.switch-button {	
+	border:1px solid #ddd;
+	border-left:1px solid #fff;
+	display:block;
+	height:25px;
+	width:25px;
+	position:absolute;
+	margin-left:163px;
+	margin-top:22px;
+	cursor:pointer;
+}
+
+.open {
+	background:#fff url(../img/close.png) no-repeat center center;
+}
+.closed {
+	background:#fff url(../img/open.png) no-repeat center center;
+}
+
+#switcher h6 {
+	font-size:11px;
+	margin-bottom:5px;
+	margin-top:2px;
+	text-transform:none;
+	color:#666;
+}
+
+.switch-item {
+	padding-bottom:10px;
+}
+
+.schemes a {
+	display:block;
+	height:20px;
+	width:70px;
+	float:left;
+	margin-right:6px;
+	font-size:11px;
+	text-align:center;
+	color:#888;
+}
+
+.schemes a:hover {
+	text-decoration:none;
+	color:#aaa;
+}
+
+.scheme-light {
+	border:1px solid #ddd;
+}
+.scheme-dark {
+	border:1px solid #333;
+	background:#252525;
+}
+
+.skins { border-bottom:0px; margin-bottom:0px; }
+
+.skins a {
+	display:block;
+	height:22px;
+	width:22px;
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+.skin-grey { background:#ccc; }
+.skin-red { background:red; }
+.skin-orange { background:orange; }
+.skin-blue { background:#3399ff; }
+.skin-light-blue { background:#57cbcd; }
+.skin-green { background:#339933; }
+.skin-light-green { background:#b0ef37; }
+.skin-brown { background:#663300; }
+.skin-purple { background:#9900cc; }

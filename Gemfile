@@ -22,7 +22,6 @@ end
 gem 'settingslogic'
 
 gem 'execjs'
-gem 'sqlite3'
 
 gem 'devise'
 gem 'omniauth', '>= 0.2.6'
@@ -32,6 +31,8 @@ gem 'formtastic'
 gem 'tabs_on_rails'
 
 group :test, :development do
+  
+  gem 'sqlite3'
 
   # essential => see http://benscheirman.com/2011/04/using-guard-spork-with-mongoid-devise
   gem 'rspec'
@@ -54,4 +55,8 @@ group :test, :development do
   gem 'faker'
   gem 'turn', :require => false
 
+end
+
+group :production do
+  gem 'pg'
 end
