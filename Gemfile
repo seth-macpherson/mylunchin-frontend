@@ -30,6 +30,7 @@ gem 'carmen'          # used as a replacement for country_select and state_selec
 gem 'formtastic'
 gem 'tabs_on_rails'
 gem 'feedzirra'
+gem 'spree'
 
 group :test, :development do
   

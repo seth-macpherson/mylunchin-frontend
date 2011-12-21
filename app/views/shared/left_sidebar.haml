@@ -8,11 +8,11 @@
     %ul
       - @feed.entries[0..3].each do |entry|
         %li
-          %a{:href => "#"}
-            %img{:alt => "", :src => "php/timthumbfe7f.php?src=/purity/img/pictures/5.jpg&h=40&w=40&zc=1"}
-              %span
-                %strong #{entry.title}
-                by #{entry.author} on #{entry.published.strftime("%b %d, %Y")}
+          %a{:href => entry.url}
+            = image_tag("icons/pages.png")
+            %span
+              %strong #{entry.title}
+              by #{entry.author} on #{entry.published.strftime("%b %d, %Y")}
   / .sidebar_item
   /   %h5 Category
   /   %ul

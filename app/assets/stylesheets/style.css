@@ -296,7 +296,7 @@ blockquote { color:#aaa; font-size:15px; font-style:italic;  margin:20px 0px 20p
 .post-info p span { color:#bbb; padding-right:2px; font-style:italic; }
 .post-info p a { color:#888; }
 
-.post-entry { float:left; width:462px; }
+.post-entry { float:left; width:462px; font-size: 13px;}
 .post-entry h1 { line-height:30px; margin-top:10px; margin-bottom:15px; }
 .post-meta { font-size:12px; line-height:20px; font-style:italic; color:#b0b0b0; display:block; margin-bottom:8px; margin-top:-15px; }
 .post-image { margin-bottom:15px; }

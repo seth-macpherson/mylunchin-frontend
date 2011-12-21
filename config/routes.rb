@@ -6,6 +6,7 @@ Mylunchin::Application.routes.draw do
 
   match "/about" => "home#about", :as => "about"
   match "/pending" => "home#pending", :as => "pending"
+  match "/seasonal" => "home#seasonal", :as => "seasonal"
   match "/blog" => redirect("http://norastable.wordpress.com/"), :as => "blog"
   
 
