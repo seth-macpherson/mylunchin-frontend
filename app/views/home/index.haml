@@ -23,27 +23,29 @@
     / Sidebar Start
     = render :template => "shared/left_sidebar"
     .content.content_right.blog3
-      .post
-        .post-image
-          %a{:href => "blog_post.html"}
+      - @plates.each do |plate|
+        .post
+          .post-image
+            / %a{:href => "blog_post.html"}
             %img{:alt => "", :height => "120", :src => "img/pictures/1w.jpg"}/
-          %span.date
-            %span.bold Feb 3
-            2011
-          %span.comments-nr
-            %a{:href => "#"}
-              %span.bold 2
-              comments
-        .post-entry
-          %h1.title
-            %a{:href => "blog_post.html"} Post title goes right here
-          %span.post-meta
-            By
-            %strong Admin
-            in
-            %strong Photography
-          %p Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis.
-          %input.button.light{:type => "submit", :value => "Add to Lunchbox"}
+            %span.date
+              %span.bold 
+                #{plate.created_at.strftime("%b %d")}
+              #{plate.created_at.year}
+            %span.comments-nr
+              %a{:href => "#"}
+                %span.bold #{rand(20)}
+                remaining
+          .post-entry
+            %h1.title
+              %a{:href => "blog_post.html"} #{plate.name}
+            %span.post-meta
+              By
+              %strong #{plate.chef}
+              -#  in
+              -#  %strong Photography
+            %p #{plate.description}
+            %input.button.light{:type => "submit", :value => "Add to Lunchbox"}
       / .post
       /   .post-image
       /     %a{:href => "blog_post.html"}

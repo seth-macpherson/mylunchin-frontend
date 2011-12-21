@@ -3,7 +3,7 @@ class CreatePlates < ActiveRecord::Migration
     create_table :plates do |t|
       t.string :name
       t.string :description
-      t.string :chef
+      t.string :chef, :default => "Kathy"
       t.boolean :vegitarean, :default => false
       t.boolean :gluten_free, :default => false
       t.decimal :price, :default => 0.00, :precision => 8, :scale => 2
