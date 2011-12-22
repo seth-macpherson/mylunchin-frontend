@@ -3,8 +3,13 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
 
-  # before_filter :get_user
+  before_filter :get_blog_feed
   # helper_method :logged_in?, :owner?, :owner_name, :public_route? #also from Devise: :current_user, :user_signed_in?, :user_session
+
+  def get_blog_feed
+    # fetching a single feed
+    @feed = Feedzirra::Feed.fetch_and_parse("http://norastable.wordpress.com/feed/")
+  end
 
   # class AccessDenied < StandardError; end
   # rescue_from AccessDenied, :with => :access_denied
