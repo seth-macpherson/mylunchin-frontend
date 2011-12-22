@@ -6,13 +6,14 @@
   .sidebar_item.recent-posts
     %h5 On the blog
     %ul
-      - @feed.entries[0..3].each do |entry|
-        %li
-          %a{:href => entry.url}
-            = image_tag("icons/pages.png")
-            %span
-              %strong #{entry.title}
-              by #{entry.author} on #{entry.published.strftime("%b %d, %Y")}
+      -unless @feed.nil?
+        - @feed.entries[0..3].each do |entry|
+          %li
+            %a{:href => entry.url}
+              = image_tag("icons/pages.png")
+              %span
+                %strong #{entry.title}
+                by #{entry.author} on #{entry.published.strftime("%b %d, %Y")}
   / .sidebar_item
   /   %h5 Category
   /   %ul
