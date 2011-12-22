@@ -1,10 +1,127 @@
-.home_tagline
-  %h1
-    Hello and Welcome to My Lunch In, the lunch service for Nora's table.
+/ .home_tagline
+/   %h1
+/     Hello and Welcome to My Lunch In, the lunch service for Nora's table.
+/     %br
+/       Feel free to read more about
+/       %a{:href => about_url} Nora's Table
+/       and check our
+/       = succeed "." do
+/         %a{:href => blog_url} Blog
+/ .divider.line
+
+#main
+  .home_tagline
     %br
-      Feel free to read more about
-      %a{:href => about_url} Nora's Table
-      and check our
-      = succeed "." do
-        %a{:href => blog_url} Blog
-.divider.line
+    %h1
+      Hello and Welcome to My Lunch In
+      %br
+        Check out today's menu from
+        %a{:href => about_url} Nora's Table
+    .clear
+    .divider.line
+  .inner
+    / Sidebar Start
+    = render :template => "shared/left_sidebar"
+    .content.content_right.blog3
+      - @plates.each do |plate|
+        .post.relative
+          .post-image
+            / %a{:href => "blog_post.html"}
+            %img{:alt => "", :height => "120", :src => asset_path("plates/#{plate.id}.jpg")}
+            %span.date
+              %span.bold 
+                #{plate.created_at.strftime("%b %d")}
+              #{plate.created_at.year}
+            %span.comments-nr
+              %a{:href => "#"}
+                %span.bold #{number_to_currency(plate.price, :unit => "$")}
+                lunch
+            / %span.comments-nr
+            /   %a{:href => "#"}
+            /     %span.bold #{rand(20)}
+            /     remaining
+          .post-entry
+            %h1.title
+              #{plate.name}
+            %span.post-meta
+              By
+              %strong #{plate.chef}
+              -#  in
+              -#  %strong Photography
+            %p #{plate.description}
+            .absolute{:style => "bottom:52px"}
+              %input.button.light{:type => "submit", :value => "See Options"}
+              - if plate.vegetarian
+                %span.highlight-light.dietary Vegetarian
+              - if plate.gluten_free
+                %span.highlight-light.dietary Gluten Free
+            
+      -# .post
+      -#   .post-image
+      -#     %a{:href => "blog_post.html"}
+      -#       %img{:alt => "", :height => "120", :src => "img/pictures/2w.jpg"}/
+      -#     %span.date
+      -#       %span.bold Feb 3
+      -#       2011
+      -#     %span.comments-nr
+      -#       %a{:href => "#"}
+      -#         %span.bold 16
+      -#         comments
+      -#   .post-entry
+      -#     %h1.title
+      -#       %a{:href => "blog_post.html"} Post title goes right here
+      -#     %span.post-meta
+      -#       By
+      -#       %strong Admin
+      -#       in
+      -#       %strong Photography
+      -#     %p Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis.
+      -#     %a{:href => "blog_post.html"} Read more →
+      -# .post
+      -#   .post-image
+      -#     %a{:href => "blog_post.html"}
+      -#       %img{:alt => "", :height => "120", :src => "img/pictures/3w.jpg"}/
+      -#     %span.date
+      -#       %span.bold Feb 3
+      -#       2011
+      -#     %span.comments-nr
+      -#       %a{:href => "#"}
+      -#         %span.bold 0
+      -#         comments
+      -#   .post-entry
+      -#     %h1.title
+      -#       %a{:href => "blog_post.html"} Post title goes right here
+      -#     %span.post-meta
+      -#       By
+      -#       %strong Admin
+      -#       in
+      -#       %strong Photography
+      -#     %p Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis.
+      -#     %a{:href => "blog_post.html"} Read more →
+      -# .post
+      -#   .post-image
+      -#     %a{:href => "blog_post.html"}
+      -#       %img{:alt => "", :height => "120", :src => "img/pictures/4w.jpg"}/
+      -#     %span.date
+      -#       %span.bold Feb 3
+      -#       2011
+      -#     %span.comments-nr
+      -#       %a{:href => "#"}
+      -#         %span.bold 8
+      -#         comments
+      -#   .post-entry
+      -#     %h1.title
+      -#       %a{:href => "blog_post.html"} Post title goes right here
+      -#     %span.post-meta
+      -#       By
+      -#       %strong Admin
+      -#       in
+      -#       %strong Photography
+      -#     %p Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis. Proin tincidunt, velit vel porta elementum, magna diam molestie sapien, non aliquet massa pede eu diam. Aliquam iaculis.
+      -#     %a{:href => "blog_post.html"} Read more →
+      -# .pagination
+      -#   %a.newer-posts{:href => "#"} Newer posts
+      -#   %a.older-posts{:href => "#"} Older posts
+    / .content End
+    / Content End
+    .clear

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @plate.name
+%p
+  %b Description:
+  = @plate.description
+%p
+  %b Chef:
+  = @plate.chef
+%p
+  %b Vegitarean:
+  = @plate.vegitarean
+%p
+  %b Gluten free:
+  = @plate.gluten_free
+%p
+  %b Price:
+  = @plate.price
+
+= link_to 'Edit', edit_plate_path(@plate)
+\|
+= link_to 'Back', plates_path

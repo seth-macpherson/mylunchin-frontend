@@ -1,0 +1,28 @@
+= form_for @plate do |f|
+  -if @plate.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@plate.errors.count, "error")} prohibited this plate from being saved:"
+      %ul
+        - @plate.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :chef
+    = f.text_field :chef
+  .field
+    = f.label :vegitarean
+    = f.check_box :vegitarean
+  .field
+    = f.label :gluten_free
+    = f.check_box :gluten_free
+  .field
+    = f.label :price
+    = f.text_field :price
+  .actions
+    = f.submit 'Save'

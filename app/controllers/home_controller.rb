@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   # before_filter :authenticate_user!
   
   def index
+    @plates = Plate.all
     set_tab :home
   end
   
@@ -13,9 +14,12 @@ class HomeController < ApplicationController
     
   end
   
+  def seasonal
+    
+  end
+  
   def pending
-    set_tab request.env['PATH_INFO'][1..-1]
-    render "_pending", :layout => "layouts/generic"
+
   end
 
 end

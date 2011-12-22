@@ -1,0 +1,50 @@
+#footer
+  .inner
+    .one_fourth.logo
+      / %images{:alt => "", :src => "images/logo_footer.png", :width => "100"}
+      %h1 My Lunch In Logo
+    .one_fourth
+      %h5 Recent tweets
+      #tweet
+        %p Please wait while tweets load..
+    .one_fourth
+      %h5 Restaurant Location
+      %p
+        Nora's Table
+        %br
+        110 Fifth Street
+        %br
+        Hood River, OR 97031
+      %p
+        Phone: 541-387-4000
+        
+      / .flickr
+      /   %script{:src => "http://www.flickr.com/badge_code_v2.gne?count=8&display=latest&size=s&layout=x&source=all_tag&tag=black+and+white", :type => "text/javascript"}
+    .one_fourth.last
+      %h5 Contact by Mail
+      %p
+        My Lunch In
+        %br
+        Box 29
+        %br
+        Hood River, OR 97031
+      %p
+        E-Mail:
+        %a{:href => "mailto:kathy@norastable.com"} kathy@norastable.com
+  / .inner End
+  .footer_small
+    .copyright
+      © 2011
+      %a{:href => "#"} Nora's Table
+      \- All rights reserved.
+    .social
+      %a{:href => "#"}
+        = image_tag("social/twitter.png")
+      %a{:href => "#"}
+        = image_tag("social/facebook.png")
+      %a{:href => "#"}
+        = image_tag("social/dribbble.png")
+      %a{:href => "#"}
+        = image_tag("social/rss.png")
+  / #footer_small End
+/ #footer End

@@ -1,0 +1,29 @@
+%h1 Listing plates
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Chef
+    %th Vegitarean
+    %th Gluten free
+    %th Price
+    %th
+    %th
+    %th
+
+  - @plates.each do |plate|
+    %tr
+      %td= plate.name
+      %td= plate.description
+      %td= plate.chef
+      %td= plate.vegitarean
+      %td= plate.gluten_free
+      %td= plate.price
+      %td= link_to 'Show', plate
+      %td= link_to 'Edit', edit_plate_path(plate)
+      %td= link_to 'Destroy', plate, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Plate', new_plate_path
