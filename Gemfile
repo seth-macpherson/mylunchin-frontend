@@ -29,8 +29,8 @@ gem 'execjs'
 # gem 'carmen'          # used as a replacement for country_select and state_select and related forks
 gem 'formtastic'
 # gem 'tabs_on_rails'
-gem 'feedzirra'
-gem 'spree'
+# gem 'feedzirra'
+# gem 'spree'
 
 group :test, :development do
   
