@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   
   def index
     @plates = Plate.all
-    set_tab :home
+    # set_tab :home
   end
   
   def about
