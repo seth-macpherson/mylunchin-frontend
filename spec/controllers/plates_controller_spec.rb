@@ -25,33 +25,32 @@ describe PlatesController do
   # update the return value of this method accordingly.
 
   before :each do
-    @plate = Factory :plate
+    plate = Factory :plate
   end
 
   describe "GET index" do
-    it "assigns all plates as @plates" do
+    it "assigns all plates as plates" do
       get :index
-      assigns(:plates).should eq([@plate])
+      assigns(:plates).should eq([plate])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested plate as @plate" do
-      get :show, :id => @plate.id
+    it "assigns the requested plate as plate" do
+      get :show, :id => plate.id
       assigns(:plate).should eq(plate)
     end
   end
 
   describe "GET new" do
-    it "assigns a new plate as @plate" do
+    it "assigns a new plate as plate" do
       get :new
-      assigns(:plate).should be_a_new(Plate)
+      assigns(:plate).should be_a_new(plate)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested plate as @plate" do
-      plate = Plate.create! valid_attributes
+    it "assigns the requested plate as plate" do
       get :edit, :id => plate.id
       assigns(:plate).should eq(plate)
     end
@@ -65,7 +64,7 @@ describe PlatesController do
         }.to change(Plate, :count).by(1)
       end
 
-      it "assigns a newly created plate as @plate" do
+      it "assigns a newly created plate as plate" do
         post :create, :plate => valid_attributes
         assigns(:plate).should be_a(Plate)
         assigns(:plate).should be_persisted
@@ -78,7 +77,7 @@ describe PlatesController do
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved plate as @plate" do
+      it "assigns a newly created but unsaved plate as plate" do
         # Trigger the behavior that occurs when invalid params are submitted
         Plate.any_instance.stub(:save).and_return(false)
         post :create, :plate => {}
@@ -97,7 +96,6 @@ describe PlatesController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested plate" do
-        plate = Plate.create! valid_attributes
         # Assuming there are no other plates in the database, this
         # specifies that the Plate created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -106,7 +104,7 @@ describe PlatesController do
         put :update, :id => plate.id, :plate => {'these' => 'params'}
       end
 
-      it "assigns the requested plate as @plate" do
+      it "assigns the requested plate as plate" do
         plate = Plate.create! valid_attributes
         put :update, :id => plate.id, :plate => valid_attributes
         assigns(:plate).should eq(plate)
@@ -120,7 +118,7 @@ describe PlatesController do
     end
 
     describe "with invalid params" do
-      it "assigns the plate as @plate" do
+      it "assigns the plate as plate" do
         plate = Plate.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Plate.any_instance.stub(:save).and_return(false)

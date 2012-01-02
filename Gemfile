@@ -38,7 +38,7 @@ group :test, :development do
 
   # essential => see http://benscheirman.com/2011/04/using-guard-spork-with-mongoid-devise
   gem 'rspec'
-  gem 'spork'
+  gem 'spork', '0.8.5'
   gem 'rb-fsevent'
   gem 'guard'
   gem 'guard-rspec'
