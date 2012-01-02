@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def get_blog_feed
     # fetching a single feed
-    # @feed = Feedzirra::Feed.fetch_and_parse("http://norastable.wordpress.com/feed/")
+    @feed = Feedzirra::Feed.fetch_and_parse("http://norastable.wordpress.com/feed/")
   end
 
   # class AccessDenied < StandardError; end

@@ -15,7 +15,7 @@
     %h1
       Hello and Welcome to My Lunch In
       %br
-        Check out today's menu from
+        Order today's lunch from
         %a{:href => about_url} Nora's Table
     .clear
     .divider.line
@@ -48,13 +48,15 @@
               %strong #{plate.chef}
               -#  in
               -#  %strong Photography
-            %p #{plate.description}
+            %p.plate-description #{plate.description}
             .absolute{:style => "bottom:52px"}
-              %input.button.light{:type => "submit", :value => "See Options"}
+              %input.button.light{:type => "submit", :value => "Place Order"}
               - if plate.vegetarian
                 %span.highlight-light.dietary Vegetarian
               - if plate.gluten_free
                 %span.highlight-light.dietary Gluten Free
+
+
             
       -# .post
       -#   .post-image
