@@ -2,11 +2,11 @@
 
 FactoryGirl.define do
   factory :plate do
-    name "MyString"
-    description "MyString"
-    chef "MyString"
-    vegitarean false
-    gluten_free false
+    name "Burmese Curry Pork"
+    description "A delicious blending of south eastern curries"
+    chef "Super Chef"
+    vegetarian false
+    gluten_free true
     price "9.99"
   end
 end

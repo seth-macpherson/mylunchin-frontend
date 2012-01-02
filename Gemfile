@@ -44,7 +44,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-pow'
-  gem 'cucumber-rails'
+  # gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'rspec-instafail'
 

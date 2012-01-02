@@ -23,22 +23,21 @@ describe PlatesController do
   # This should return the minimal set of attributes required to create a valid
   # Plate. As you add validations to Plate, be sure to
   # update the return value of this method accordingly.
-  def valid_attributes
-    {}
+
+  before :each do
+    @plate = Factory :plate
   end
 
   describe "GET index" do
     it "assigns all plates as @plates" do
-      plate = Plate.create! valid_attributes
       get :index
-      assigns(:plates).should eq([plate])
+      assigns(:plates).should eq([@plate])
     end
   end
 
   describe "GET show" do
     it "assigns the requested plate as @plate" do
-      plate = Plate.create! valid_attributes
-      get :show, :id => plate.id
+      get :show, :id => @plate.id
       assigns(:plate).should eq(plate)
     end
   end

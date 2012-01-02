@@ -6,7 +6,7 @@ describe "plates/new.html.haml" do
       :name => "MyString",
       :description => "MyString",
       :chef => "MyString",
-      :vegitarean => false,
+      :vegetarian => false,
       :gluten_free => false,
       :price => "9.99"
     ).as_new_record)
@@ -20,7 +20,7 @@ describe "plates/new.html.haml" do
       assert_select "input#plate_name", :name => "plate[name]"
       assert_select "input#plate_description", :name => "plate[description]"
       assert_select "input#plate_chef", :name => "plate[chef]"
-      assert_select "input#plate_vegitarean", :name => "plate[vegitarean]"
+      assert_select "input#plate_vegetarian", :name => "plate[vegetarian]"
       assert_select "input#plate_gluten_free", :name => "plate[gluten_free]"
       assert_select "input#plate_price", :name => "plate[price]"
     end

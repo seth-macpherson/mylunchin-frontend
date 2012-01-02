@@ -7,7 +7,7 @@ describe "plates/index.html.haml" do
         :name => "Name",
         :description => "Description",
         :chef => "Chef",
-        :vegitarean => false,
+        :vegetarian => false,
         :gluten_free => false,
         :price => "9.99"
       ),
@@ -15,7 +15,7 @@ describe "plates/index.html.haml" do
         :name => "Name",
         :description => "Description",
         :chef => "Chef",
-        :vegitarean => false,
+        :vegetarian => false,
         :gluten_free => false,
         :price => "9.99"
       )
