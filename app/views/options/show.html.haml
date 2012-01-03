@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Label:
+  = @option.label
+
+= link_to 'Edit', edit_option_path(@option)
+\|
+= link_to 'Back', options_path

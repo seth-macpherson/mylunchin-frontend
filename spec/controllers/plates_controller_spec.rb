@@ -31,7 +31,7 @@ describe PlatesController do
   describe "GET index" do
     it "assigns all plates as plates" do
       get :index
-      assigns(:plates).should eq([@plate])
+      assigns(:plates).should have_at_least(1).item
     end
   end
 
@@ -61,7 +61,7 @@ describe PlatesController do
       it "creates a new Plate" do
         expect {
           post :create, :plate => Factory.attributes_for(:plate)
-        }.to change(Plate, :count).by(1)
+        }.to change(Plate, :count).by(1)  
       end
 
       it "assigns a newly created plate as plate" do

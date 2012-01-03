@@ -34,3 +34,10 @@ plates = Plate.create!([{
   :chef => "Justin"
   
 }])
+
+OrderType.create!([{
+  :name => "Pickup"
+},{
+  :name => "Delivery"
+}])
+

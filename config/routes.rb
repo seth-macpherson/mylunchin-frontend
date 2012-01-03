@@ -1,5 +1,17 @@
 Mylunchin::Application.routes.draw do
 
+  resources :order_items
+
+  resources :order_types
+
+  resources :locations
+
+  resources :orders
+
+  resources :selections
+
+  resources :options
+
   resources :plates
 
   root :to => 'home#index'

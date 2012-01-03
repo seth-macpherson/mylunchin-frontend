@@ -1,0 +1,23 @@
+%h1 Listing order_items
+
+%table
+  %tr
+    %th Price
+    %th Plate
+    %th Selection
+    %th
+    %th
+    %th
+
+  - @order_items.each do |order_item|
+    %tr
+      %td= order_item.price
+      %td= order_item.plate_id
+      %td= order_item.selection_id
+      %td= link_to 'Show', order_item
+      %td= link_to 'Edit', edit_order_item_path(order_item)
+      %td= link_to 'Destroy', order_item, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Order item', new_order_item_path

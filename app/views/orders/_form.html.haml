@@ -1,0 +1,6 @@
+= semantic_form_for @order do |form|
+  = form.inputs do
+    = form.input :total, :label => 'Total'
+    = form.input :order_type, :label => 'Order Type'
+    = form.input :location, :label => 'Location'
+  = form.buttons

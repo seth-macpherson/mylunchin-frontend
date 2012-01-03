@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Price:
+  = @order_item.price
+%p
+  %b Plate:
+  = @order_item.plate_id
+%p
+  %b Selection:
+  = @order_item.selection_id
+
+= link_to 'Edit', edit_order_item_path(@order_item)
+\|
+= link_to 'Back', order_items_path

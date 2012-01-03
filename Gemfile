@@ -27,26 +27,22 @@ gem 'devise'
 gem 'omniauth', '>= 0.2.6'
 # gem 'friendly_id'
 # gem 'carmen'          # used as a replacement for country_select and state_select and related forks
+gem 'rails3-generators'
 gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => '2-0-stable'
-# gem 'tabs_on_rails'
-gem 'feedzirra'
 # gem 'spree'
 
 group :test, :development do
   
   gem 'sqlite3'
 
-  # essential => see http://benscheirman.com/2011/04/using-guard-spork-with-mongoid-devise
   gem 'rspec'
   gem 'spork', '0.8.5'
   gem 'rb-fsevent'
-  gem 'rails_best_practices'
   gem 'guard'
-  gem 'guard-rails_best_practices'
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-pow'
-  # gem 'cucumber-rails'
+  gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'rspec-instafail'
 
@@ -63,4 +59,6 @@ end
 
 group :production do
   gem 'pg'
+  # gem 'tabs_on_rails'
+  gem 'feedzirra'
 end

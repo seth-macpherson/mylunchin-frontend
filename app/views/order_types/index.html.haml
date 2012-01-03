@@ -1,0 +1,19 @@
+%h1 Listing order_types
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @order_types.each do |order_type|
+    %tr
+      %td= order_type.name
+      %td= link_to 'Show', order_type
+      %td= link_to 'Edit', edit_order_type_path(order_type)
+      %td= link_to 'Destroy', order_type, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Order type', new_order_type_path
