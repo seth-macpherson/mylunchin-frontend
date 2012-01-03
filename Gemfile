@@ -24,6 +24,7 @@ gem 'settingslogic'
 gem 'execjs'
 
 gem 'devise'
+gem 'nokogiri', '>= 1.4.7'
 gem 'omniauth', '>= 0.2.6'
 # gem 'friendly_id'
 # gem 'carmen'          # used as a replacement for country_select and state_select and related forks

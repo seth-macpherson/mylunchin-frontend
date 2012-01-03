@@ -242,6 +242,7 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  nokogiri (>= 1.4.7)
   omniauth (>= 0.2.6)
   pg
   rails (= 3.1.1)
