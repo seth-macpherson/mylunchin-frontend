@@ -41,20 +41,29 @@
             /     %span.bold #{rand(20)}
             /     remaining
           .post-entry
-            %h1.title
+            %h1.title.line
               #{plate.name}
-            %span.post-meta
-              By
-              %strong #{plate.chef}
+            .divider.line.short
+              -# By
+              -# %strong Kathy Awesomeness
               -#  in
               -#  %strong Photography
             %p.plate-description #{plate.description}
-            .absolute{:style => "bottom:52px"}
+            / .absolute{:style => "top:175px"}
+            %div.cta
               %input.button.light{:type => "submit", :value => "Place Order"}
               - if plate.vegetarian
                 %span.highlight-light.dietary Vegetarian
               - if plate.gluten_free
                 %span.highlight-light.dietary Gluten Free
+              = plate.options
+                %ul.plate-options.hidden
+                  .li
+                    Delivered hot
+                  .li
+                    Delivered cold, ready for the microwave
+              
+              
 
 
             

@@ -78,7 +78,7 @@ jQuery(document).ready(function(){
 		});	
 	}
 	
-	over();
+	// over();
 	
 	// Firefox fix
 	
@@ -90,7 +90,7 @@ jQuery(document).ready(function(){
 	// Opacity change on hover
 	
 	function hover_opacity() {
-		$('.portfolio img,.content .gallery, .button, .big_button, .search_submit, .flickr_badge_image img').hover(function() {
+		$('.portfolio img,.content .gallery, .big_button, .search_submit, .flickr_badge_image img').hover(function() {
 			$(this).stop().animate({ "opacity": .4 }, 250);
 		}, function() {
 			$(this).stop().animate({ "opacity": 1 }, 250);

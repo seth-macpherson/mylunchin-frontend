@@ -163,7 +163,9 @@ input, textarea {
 .line {
   border-top: 1px dotted #ddd;
   margin-top: 28px;
-  margin-bottom: 29px; }
+  margin-bottom: 29px; 
+	&.short {
+		margin: 12px 0; }}
 
 .top {
   text-align: right;
@@ -1126,11 +1128,23 @@ a {
   -moz-margin-start: 20px;
   display: inline-block;
   font-weight: bold;
-  overflow: hidden; }
+  overflow: hidden; 
+  -moz-transition: color 0.1s linear;
+  -webkit-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  a:hover {
+    color: #d16f4e;
+    .bold {
+      color: #d16f4e; } } }
 
 .button {
   padding: 5px 12px;
-  margin-bottom: 18px; }
+  margin-bottom: 18px; 
+}
+.cta {
+	.button {
+	  -moz-margin-start: 0px;
+}}
 
 .big_button {
   padding: 7px 20px;

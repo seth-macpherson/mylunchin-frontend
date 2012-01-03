@@ -25,34 +25,34 @@ describe PlatesController do
   # update the return value of this method accordingly.
 
   before :each do
-    plate = Factory :plate
+    @plate = Factory :plate
   end
 
   describe "GET index" do
     it "assigns all plates as plates" do
       get :index
-      assigns(:plates).should eq([plate])
+      assigns(:plates).should eq([@plate])
     end
   end
 
   describe "GET show" do
     it "assigns the requested plate as plate" do
-      get :show, :id => plate.id
-      assigns(:plate).should eq(plate)
+      get :show, :id => @plate.id
+      assigns(:plate).should eq(@plate)
     end
   end
 
   describe "GET new" do
     it "assigns a new plate as plate" do
       get :new
-      assigns(:plate).should be_a_new(plate)
+      assigns(:plate).should be_a_new(Plate)
     end
   end
 
   describe "GET edit" do
     it "assigns the requested plate as plate" do
-      get :edit, :id => plate.id
-      assigns(:plate).should eq(plate)
+      get :edit, :id => @plate.id
+      assigns(:plate).should eq(@plate)
     end
   end
 
@@ -60,18 +60,18 @@ describe PlatesController do
     describe "with valid params" do
       it "creates a new Plate" do
         expect {
-          post :create, :plate => valid_attributes
+          post :create, :plate => Factory.attributes_for(:plate)
         }.to change(Plate, :count).by(1)
       end
 
       it "assigns a newly created plate as plate" do
-        post :create, :plate => valid_attributes
+        post :create, :plate => Factory.attributes_for(:plate)
         assigns(:plate).should be_a(Plate)
         assigns(:plate).should be_persisted
       end
 
       it "redirects to the created plate" do
-        post :create, :plate => valid_attributes
+        post :create, :plate => Factory.attributes_for(:plate)
         response.should redirect_to(Plate.last)
       end
     end
@@ -101,36 +101,36 @@ describe PlatesController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Plate.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => plate.id, :plate => {'these' => 'params'}
+        put :update, :id => @plate.id, :plate => {'these' => 'params'}
       end
 
       it "assigns the requested plate as plate" do
-        plate = Plate.create! valid_attributes
-        put :update, :id => plate.id, :plate => valid_attributes
-        assigns(:plate).should eq(plate)
+        plate = Plate.create! Factory.attributes_for(:plate)
+        put :update, :id => @plate.id, :plate => Factory.attributes_for(:plate)
+        assigns(:plate).should eq(@plate)
       end
 
       it "redirects to the plate" do
-        plate = Plate.create! valid_attributes
-        put :update, :id => plate.id, :plate => valid_attributes
-        response.should redirect_to(plate)
+        plate = Plate.create! Factory.attributes_for(:plate)
+        put :update, :id => @plate.id, :plate => Factory.attributes_for(:plate)
+        response.should redirect_to(@plate)
       end
     end
 
     describe "with invalid params" do
       it "assigns the plate as plate" do
-        plate = Plate.create! valid_attributes
+        plate = Plate.create! Factory.attributes_for(:plate)
         # Trigger the behavior that occurs when invalid params are submitted
         Plate.any_instance.stub(:save).and_return(false)
-        put :update, :id => plate.id, :plate => {}
-        assigns(:plate).should eq(plate)
+        put :update, :id => @plate.id, :plate => {}
+        assigns(:plate).should eq(@plate)
       end
 
       it "re-renders the 'edit' template" do
-        plate = Plate.create! valid_attributes
+        plate = Plate.create! Factory.attributes_for(:plate)
         # Trigger the behavior that occurs when invalid params are submitted
         Plate.any_instance.stub(:save).and_return(false)
-        put :update, :id => plate.id, :plate => {}
+        put :update, :id => @plate.id, :plate => {}
         response.should render_template("edit")
       end
     end
@@ -138,15 +138,15 @@ describe PlatesController do
 
   describe "DELETE destroy" do
     it "destroys the requested plate" do
-      plate = Plate.create! valid_attributes
+      plate = Plate.create! Factory.attributes_for(:plate)
       expect {
-        delete :destroy, :id => plate.id
+        delete :destroy, :id => @plate.id
       }.to change(Plate, :count).by(-1)
     end
 
     it "redirects to the plates list" do
-      plate = Plate.create! valid_attributes
-      delete :destroy, :id => plate.id
+      plate = Plate.create! Factory.attributes_for(:plate)
+      delete :destroy, :id => @plate.id
       response.should redirect_to(plates_url)
     end
   end
