@@ -1,5 +1,7 @@
 Mylunchin::Application.routes.draw do
 
+  devise_for :users, :skip => :all
+
   resources :order_items
 
   resources :order_types

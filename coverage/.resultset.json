@@ -966,6 +966,17 @@
   },
   "/usr/local/rvm/gems/ruby-1.9.3-rc1@mylunchin/bin/spork ": {
     "coverage": {
+      "/Users/sethmacpherson/Dev/ruby/mylunchin/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
       "/Users/sethmacpherson/Dev/ruby/mylunchin/app/controllers/application_controller.rb": [
         1,
         null,
@@ -1693,6 +1704,7 @@
       ],
       "/Users/sethmacpherson/Dev/ruby/mylunchin/app/models/location.rb": [
         1,
+        null,
         null
       ],
       "/Users/sethmacpherson/Dev/ruby/mylunchin/app/models/option.rb": [
@@ -1702,6 +1714,7 @@
         null
       ],
       "/Users/sethmacpherson/Dev/ruby/mylunchin/app/models/order.rb": [
+        1,
         1,
         null
       ],
@@ -1727,7 +1740,7 @@
         null
       ]
     },
-    "timestamp": 1325624092
+    "timestamp": 1325628189
   },
   "/usr/local/rvm/gems/ruby-1.9.2-p290@rails3.1/bin/spork ": {
     "coverage": {
@@ -2494,6 +2507,6 @@
         null
       ]
     },
-    "timestamp": 1325627382
+    "timestamp": 1325627982
   }
 }
