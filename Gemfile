@@ -27,7 +27,7 @@ gem 'devise'
 gem 'omniauth', '>= 0.2.6'
 # gem 'friendly_id'
 # gem 'carmen'          # used as a replacement for country_select and state_select and related forks
-gem 'formtastic'
+gem 'formtastic', '~> 1.2.4'
 # gem 'tabs_on_rails'
 gem 'feedzirra'
 # gem 'spree'
