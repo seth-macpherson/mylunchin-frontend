@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Label:
+  = @variation.label
+
+= link_to 'Edit', edit_variation_path(@variation)
+\|
+= link_to 'Back', variations_path

@@ -1,0 +1,19 @@
+%h1 Listing variations
+
+%table
+  %tr
+    %th Label
+    %th
+    %th
+    %th
+
+  - @variations.each do |variation|
+    %tr
+      %td= variation.label
+      %td= link_to 'Show', variation
+      %td= link_to 'Edit', edit_variation_path(variation)
+      %td= link_to 'Destroy', variation, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Variation', new_variation_path
