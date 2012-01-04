@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -5,6 +6,67 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+options = Option.create!([{
+  :label => "Choose one for soup"
+},{
+  :label => "Sandwich on Dave’s Killer bread, multigrain, choose one"
+},{
+  :label => "Cheese, choose one"
+},{
+  :label => "Condiments, choose as many as you like"
+}])
+
+selections = Selection.create!([{
+  :option => options[0],
+  :name => "Delivered hot"
+},{
+  :option => options[0],
+  :name => "Delivered cold, ready for the microwave"
+},{
+  :option => options[1],
+  :name => "Smoked turkey breast"
+},{
+  :option => options[1],
+  :name => "Roast beef sirloin"
+},{
+  :option => options[1],
+  :name => "BLAT: Applewood smoked bacon, lettuce, avocado, pickled green tomato on toasted Dave’s bread"
+},{
+  :option => options[1],
+  :name => "Vegetarian roasted vegetable"
+},{
+  :option => options[2],
+  :name => "Tillamook cheddar"
+},{
+  :option => options[2],
+  :name => "Tillamook jack"
+},{
+  :option => options[2],
+  :name => "No cheese"
+},{
+  :option => options[3],
+  :name => "Mayonnaise"
+},{
+  :option => options[3],
+  :name => "Chipotle mayo"
+},{
+  :option => options[3],
+  :name => "House-made whole-grain mustard"
+},{
+  :option => options[3],
+  :name => "Butter"
+},{
+  :option => options[3],
+  :name => "Lettuce"
+},{
+  :option => options[3],
+  :name => "Pickles"
+},{
+  :option => options[3],
+  :name => "Sliced red onion"
+}])
+
 
 plates = Plate.create!([{
   :name => "Today's Special",
@@ -32,12 +94,6 @@ plates = Plate.create!([{
   :description => "Savory curry pork with seared vegetables on a bed of jasmine rice",
   :price => 12.00,
   :chef => "Justin"
-  
 }])
 
-OrderType.create!([{
-  :name => "Pickup"
-},{
-  :name => "Delivery"
-}])
-
+plates[0].

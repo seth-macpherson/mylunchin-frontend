@@ -1,9 +1,9 @@
 class CreateOrderItems < ActiveRecord::Migration
   def change
     create_table :order_items do |t|
-      t.integer :price
       t.integer :plate_id
-      t.integer :selection_id
+      t.text    :description
+      t.decimal :price, :default => 0.00, :precision => 8, :scale => 2
 
       t.timestamps
     end

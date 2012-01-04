@@ -4,8 +4,6 @@ Mylunchin::Application.routes.draw do
 
   resources :order_items
 
-  resources :order_types
-
   resources :locations
 
   resources :orders
