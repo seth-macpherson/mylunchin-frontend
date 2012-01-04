@@ -32,6 +32,10 @@ gem 'rails3-generators'
 gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => '2-0-stable'
 # gem 'spree'
 
+gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git", :branch => "master"
+gem "meta_search",    '>= 1.1.0.pre'
+
+
 group :test, :development do
   
   gem 'sqlite3'

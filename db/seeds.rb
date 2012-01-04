@@ -15,6 +15,8 @@ vars = Variation.create!([{
   :label => "Cheese, choose one"
 },{
   :label => "Condiments, choose as many as you like"
+},{
+  :label => "Salad dressing"
 }])
 
 selections = Selection.create!([{
@@ -65,6 +67,21 @@ selections = Selection.create!([{
 },{
   :variation_id => vars[3].id,
   :name => "Sliced red onion"
+},{
+  :variation_id => vars[4].id,
+  :name => "Bleu cheese"
+},{
+  :variation_id => vars[4].id,
+  :name => "Champagne vinaigrette"
+},{
+  :variation_id => vars[4].id,
+  :name => "Honey mustard"
+},{
+  :variation_id => vars[4].id,
+  :name => "Spicy lime & chili"
+},{
+  :variation_id => vars[4].id,
+  :name => "Rancho diablo"
 }])
 
 
@@ -95,3 +112,5 @@ plates = Plate.create!([{
   :price => 12.00,
   :chef => "Justin"
 }])
+
+plates[0].variations << vars[0]
