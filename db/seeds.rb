@@ -7,7 +7,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-options = Option.create!([{
+vars = Variation.create!([{
   :label => "Choose one for soup"
 },{
   :label => "Sandwich on Dave’s Killer bread, multigrain, choose one"
@@ -18,52 +18,52 @@ options = Option.create!([{
 }])
 
 selections = Selection.create!([{
-  :option => options[0],
+  :variation_id => vars[0].id,
   :name => "Delivered hot"
 },{
-  :option => options[0],
+  :variation_id => vars[0].id,
   :name => "Delivered cold, ready for the microwave"
 },{
-  :option => options[1],
+  :variation_id => vars[1].id,
   :name => "Smoked turkey breast"
 },{
-  :option => options[1],
+  :variation_id => vars[1].id,
   :name => "Roast beef sirloin"
 },{
-  :option => options[1],
+  :variation_id => vars[1].id,
   :name => "BLAT: Applewood smoked bacon, lettuce, avocado, pickled green tomato on toasted Dave’s bread"
 },{
-  :option => options[1],
+  :variation_id => vars[1].id,
   :name => "Vegetarian roasted vegetable"
 },{
-  :option => options[2],
+  :variation_id => vars[2].id,
   :name => "Tillamook cheddar"
 },{
-  :option => options[2],
+  :variation_id => vars[2].id,
   :name => "Tillamook jack"
 },{
-  :option => options[2],
+  :variation_id => vars[2].id,
   :name => "No cheese"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "Mayonnaise"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "Chipotle mayo"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "House-made whole-grain mustard"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "Butter"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "Lettuce"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "Pickles"
 },{
-  :option => options[3],
+  :variation_id => vars[3].id,
   :name => "Sliced red onion"
 }])
 

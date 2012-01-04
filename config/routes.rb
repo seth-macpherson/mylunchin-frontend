@@ -1,5 +1,7 @@
 Mylunchin::Application.routes.draw do
 
+  resources :variations
+
   devise_for :users, :skip => :all
 
   resources :order_items
@@ -9,8 +11,6 @@ Mylunchin::Application.routes.draw do
   resources :orders
 
   resources :selections
-
-  resources :options
 
   resources :plates
 

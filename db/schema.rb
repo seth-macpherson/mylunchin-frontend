@@ -11,16 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104004757) do
+ActiveRecord::Schema.define(:version => 20120104194438) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "options", :force => true do |t|
-    t.string   "label"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,13 +34,6 @@ ActiveRecord::Schema.define(:version => 20120104004757) do
     t.datetime "updated_at"
   end
 
-  create_table "plate_options", :id => false, :force => true do |t|
-    t.integer "plate_id"
-    t.integer "option_id"
-  end
-
-  add_index "plate_options", ["plate_id", "option_id"], :name => "index_plate_options_on_plate_id_and_option_id", :unique => true
-
   create_table "plates", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -58,8 +45,16 @@ ActiveRecord::Schema.define(:version => 20120104004757) do
     t.datetime "updated_at"
   end
 
+  create_table "plates_variation", :id => false, :force => true do |t|
+    t.integer "plate_id"
+    t.integer "variation_id"
+  end
+
+  add_index "plates_variation", ["plate_id", "variation_id"], :name => "index_plates_variation_on_plate_id_and_variation_id", :unique => true
+
   create_table "selections", :force => true do |t|
     t.string   "name"
+    t.integer  "variation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,5 +76,11 @@ ActiveRecord::Schema.define(:version => 20120104004757) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "variations", :force => true do |t|
+    t.string   "label"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
