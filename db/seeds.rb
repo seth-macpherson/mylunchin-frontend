@@ -95,5 +95,3 @@ plates = Plate.create!([{
   :price => 12.00,
   :chef => "Justin"
 }])
-
-plates[0].
