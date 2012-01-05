@@ -2,7 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-Bundler.require *Rails.groups(:assets) if defined?(Bundler)
+if defined?(Bundler)
+  Bundler.require *Rails.groups(:assets => %w(development test))
+end
 
 module Mylunchin
   class Application < Rails::Application

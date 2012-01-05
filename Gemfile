@@ -16,7 +16,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass', '~> 0.12.alpha'  
 end
 
 # provide simple configuration settings mechanism
@@ -33,7 +32,7 @@ gem 'rails3-generators'
 gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => '2-0-stable'
 # gem 'spree'
 
-gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git", :branch => "master"
+gem 'activeadmin', :git => "git://github.com/seth-macpherson/active_admin.git"
 gem "meta_search",    '>= 1.1.0.pre'
 
 
@@ -66,5 +65,5 @@ end
 group :production do
   gem 'pg'
   # gem 'tabs_on_rails'
-  gem 'feedzirra'
+  # gem 'feedzirra'
 end
