@@ -2,9 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-if defined?(Bundler)
-  Bundler.require *Rails.groups(:assets => %w(development test))
-end
+Bundler.require *Rails.groups(:assets) if defined?(Bundler)
 
 module Mylunchin
   class Application < Rails::Application
@@ -55,10 +53,8 @@ module Mylunchin
     config.assets.enabled = true
 
     config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
-
-    # if you prefer `.sass` over `.scss`.
-    config.sass.preferred_syntax = :sass
-
+    config.generators.stylesheet_engine = :sass
+    
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
