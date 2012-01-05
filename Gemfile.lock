@@ -202,7 +202,7 @@ GEM
       railties (~> 3.0)
       rspec (~> 2.7.0)
     rubyzip (0.9.5)
-    sass (3.1.12)
+    sass (3.1.10)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
@@ -246,6 +246,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  bourbon
   coffee-rails (~> 3.1.1)
   coffee-script
   cucumber-rails

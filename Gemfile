@@ -3,17 +3,20 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 
 # This order matters!
-# gem 'compass'
 gem 'haml'
 gem 'haml-rails', :group => :development
 # LET'S NOT GO HERE -> gem 'html5-boilerplate'
 gem 'jquery-rails'
 gem 'coffee-script'
+gem 'bourbon'
 
 # Gems used only for assets and not required
 # in production environments by default.
+
+# For ActiveAdmin
+gem 'sass-rails',   '~> 3.1.4'
+
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
