@@ -12,7 +12,9 @@ Mylunchin::Application.routes.draw do
 
   resources :locations
 
-  resources :orders
+  resources :orders do
+    resources :plates
+  end
 
   resources :selections
 
@@ -25,6 +27,9 @@ Mylunchin::Application.routes.draw do
   match "/seasonal" => "home#seasonal", :as => "seasonal"
   match "/blog" => redirect("http://norastable.wordpress.com/"), :as => "blog"
   
+
+  match "lunchbox/add" => "order#add_to_cart", :as => :add_to_lunchbox
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

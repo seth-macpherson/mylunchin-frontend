@@ -90,7 +90,7 @@ jQuery(document).ready(function(){
 	// Opacity change on hover
 	
 	function hover_opacity() {
-		$('.portfolio img,.content .gallery, .big_button, .search_submit, .flickr_badge_image img').hover(function() {
+		$('.portfolio img,.content .blog-gallery, .big_button, .search_submit, .flickr_badge_image img').hover(function() {
 			$(this).stop().animate({ "opacity": .4 }, 250);
 		}, function() {
 			$(this).stop().animate({ "opacity": 1 }, 250);
@@ -257,10 +257,20 @@ jQuery(document).ready(function(){
  */
 	
 	function prettyPhoto() {
-		$(".gallery a[rel^='gallery']").prettyPhoto({animation_speed:'normal',theme:'pp_default',deeplinking:false,slideshow:3000});
+		$(".gallery a[rel^='gallery']").prettyPhoto({animation_speed:'fast',theme:'pp_default',deeplinking:false,allow_resize:false});
 	}
 	
 	prettyPhoto();
+	
+/*
+ * ---------------------------------------------------------------- 
+ *  PlaceOrder
+ * ----------------------------------------------------------------  
+ */
+	
+	function  (argument) {
+		// body...
+	}
 	
 	
 });

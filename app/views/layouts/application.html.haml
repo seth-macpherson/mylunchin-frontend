@@ -11,9 +11,10 @@
       #header
         .inner
           .logo
-            %a{:href => root_url}
-              %img{:src => 'http://placehold.it/280x60&text=My+Lunch+In+Logo', :alt => 'Welcome to My Lunch In'}
-              / %images{:alt => "My Lunch In", :src => "images/logo.png"}/
+            %a.table{:href => root_url}
+              = image_tag("table.png")
+            %h1 My Lunch In
+            %h5 Today @ Nora's Table
           -# navigation
           = render :partial => "layouts/navigation"
           / #nav end

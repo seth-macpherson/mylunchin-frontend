@@ -24,40 +24,64 @@
     = render :template => "shared/left_sidebar"
     .content.content_right.blog3
       - @plates.each do |plate|
-        .post.relative
-          .post-image
-            / %a{:href => "blog_post.html"}
-            %img{:alt => "", :height => "120", :src => asset_path("plates/#{plate.id}.jpg")}
-            %span.date
-              %span.bold 
-                #{plate.created_at.strftime("%b %d")}
-              #{plate.created_at.year}
-            %span.comments-nr
-              %a{:href => "#"}
-                %span.bold #{number_to_currency(plate.price, :unit => "$")}
-                lunch
-            / %span.comments-nr
-            /   %a{:href => "#"}
-            /     %span.bold #{rand(20)}
-            /     remaining
-          .post-entry
-            %h1.title.line
-              #{plate.name}
-            .divider.line.short
-              -# By
-              -# %strong Kathy Awesomeness
-              -#  in
-              -#  %strong Photography
-            %p.plate-description #{plate.description}
-            / .absolute{:style => "top:175px"}
-            %div.button-row.cta
-              %input.button.light{:type => "submit", :value => "Place Order"}
-              - if plate.vegetarian
-                %span.highlight-light.dietary Vegetarian
-              - if plate.gluten_free
-                %span.highlight-light.dietary Gluten Free
-              
-            
+        / form_for(plate, :url => add_to_lunchbox_url, :remote => true) do |form|
+        %form[plate]
+          .post.relative
+            .post-image.gallery.clearfix
+              %a{:href => asset_path("plates/#{plate.id}.jpg"), :rel => "gallery[gallery#{plate.id}]"}
+                %img{:alt => plate.name, :height => "120", :src => asset_path("plates/#{plate.id}.jpg")}
+              %span.date
+                %span.bold 
+                  #{plate.created_at.strftime("%b %d")}
+                #{plate.created_at.year}
+              %span.comments-nr
+                %a{:href => asset_path("plates/#{plate.id}.jpg"), :rel => "gallery[gallery#{plate.id}]"}
+                  %span.bold #{number_to_currency(plate.price, :unit => "$")}
+                  lunch
+              / %span.comments-nr
+              /   %a{:href => "#"}
+              /     %span.bold #{rand(20)}
+              /     remaining
+            .post-entry
+              %h1.title.line
+                #{plate.name}
+              .divider.line.short
+                -# By
+                -# %strong Kathy Awesomeness
+                -#  in
+                -#  %strong Photography
+              %p.plate-description #{plate.description}
+              / .absolute{:style => "top:175px"}
+              .button-row.cta
+                %input.button.light{:type => "submit", :value => "Place Order"}
+                - if plate.vegetarian
+                  %span.highlight-light.dietary Vegetarian
+                - if plate.gluten_free
+                  %span.highlight-light.dietary Gluten Free
+              %ul.plate-variations
+                - plate.variations.each do |v|
+                  %li.variation-label
+                    %span
+                      #{v.label}:
+                    %ul
+                      - v.selections.each do |s|
+                        %li.plate-selection
+                          - if v.choose_one
+                            %input.radio{:type => "radio", 
+                              :name => "plate[#{plate.id}]variation[#{v.id}]", 
+                              :value => s.name,
+                              :checked => (s.defaulted ? "checked" : nil),
+                              :id => "selection_#{plate.id}_#{s.id}"}
+                          - else
+                            %input.checkbox{:type => "checkbox", 
+                              :name => "plate[#{plate.id}]variation[#{v.id}]", 
+                              :value => s.name, 
+                              :checked => (s.defaulted ? "checked" : nil),
+                              :id => "selection_#{plate.id}_#{s.id}"}
+                          
+                          %label{:for => "selection_#{plate.id}_#{s.id}"}
+                            #{s.name}
+                          .clear
               
 
 

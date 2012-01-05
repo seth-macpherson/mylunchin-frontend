@@ -20,6 +20,7 @@ Purity HTML/CSS Template main stylesheet.
 		6.2.2 Pagination		
 	6.3 Portfolio
 	6.4 Contact
+	6.5 Plate-Variations
 7. Footer
 	7.1 Copyright
 	7.2 Social
@@ -54,7 +55,7 @@ ul {
 /*========================*/
 
 body {
-  background: #fff;
+  background: url(asset-path('light_gray_background.gif','image')) repeat-x #fff;
   font-size: 12px;
   line-height: 20px;
   font-family: Helvetica, Arial, sans-serif;
@@ -62,7 +63,6 @@ body {
 
 #wrapper {
   width: 980px;
-  background: #fff;
   margin: 0 auto; }
 
 .inner {
@@ -374,8 +374,19 @@ blockquote {
     border-bottom: 1px dotted #ddd; }
   .logo {
     float: left;
-    margin-top: 32px;
-    h1 {} } }
+    margin-top: 32px; 
+		width: 500px;
+		.table {
+			float: left;
+		}
+		h1 {
+			margin: 15px 0px 4px 0px;
+			color: #333;
+			font-size: 38px;
+		  letter-spacing: 2px;
+		  }
+		}
+}
 
 /*========================*/
 /*===  5.1. Navigation ===*/
@@ -530,7 +541,7 @@ blockquote {
   width: 662px;
   float: left;
   margin-right: 20px;
-  .gallery {
+  .blog-gallery {
     margin-bottom: 30px;
     a > img {
       width: 644px; } } }
@@ -994,6 +1005,31 @@ a {
   position: absolute;
   margin-top: -51px;
   margin-left: 250px; }
+
+/*========================*/
+/*===  6.4. Contact    ===*/
+/*========================*/
+
+.variation-label {
+	span {
+		margin: 0 10px 0 5px;
+		font-weight: bold;
+		color: #444444;
+	}
+}
+.plate-selection {
+	margin: 5px 0;
+	line-height: 15px;
+	input {
+		width: 5%;
+		float: left;
+	}
+	label {
+		width: 90%;
+		float: left;
+	}
+}
+
 
 /*========================*/
 /*===  7. Footer       ===*/

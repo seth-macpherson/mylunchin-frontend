@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20120104214145) do
   create_table "selections", :force => true do |t|
     t.string   "name"
     t.integer  "variation_id"
+    t.boolean  "defaulted",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -112,7 +113,9 @@ ActiveRecord::Schema.define(:version => 20120104214145) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "variations", :force => true do |t|
+    t.string   "name"
     t.string   "label"
+    t.boolean  "choose_one", :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,14 +8,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 vars = Variation.create!([{
+  :name  => "Soup",
   :label => "Choose one for soup"
 },{
+  :name  => "Sandwich",
   :label => "Sandwich on Dave’s Killer bread, multigrain, choose one"
 },{
+  :name  => "Cheese",
   :label => "Cheese, choose one"
 },{
-  :label => "Condiments, choose as many as you like"
+  :name  => "Condiment",
+  :label => "Condiments, choose as many as you like",
+  :choose_one => false
 },{
+  :name  => "Dressing",
   :label => "Salad dressing"
 }])
 
@@ -24,10 +30,12 @@ selections = Selection.create!([{
   :name => "Delivered hot"
 },{
   :variation_id => vars[0].id,
-  :name => "Delivered cold, ready for the microwave"
+  :name => "Delivered cold, ready for the microwave",
+  :defaulted => true
 },{
   :variation_id => vars[1].id,
-  :name => "Smoked turkey breast"
+  :name => "Smoked turkey breast",
+  :defaulted => true
 },{
   :variation_id => vars[1].id,
   :name => "Roast beef sirloin"
@@ -39,7 +47,8 @@ selections = Selection.create!([{
   :name => "Vegetarian roasted vegetable"
 },{
   :variation_id => vars[2].id,
-  :name => "Tillamook cheddar"
+  :name => "Tillamook cheddar",
+  :defaulted => true
 },{
   :variation_id => vars[2].id,
   :name => "Tillamook jack"
@@ -113,4 +122,15 @@ plates = Plate.create!([{
   :chef => "Justin"
 }])
 
+# Add hot & cold opts
 plates[0].variations << vars[0]
+plates[1].variations << vars[0] << vars[4]
+# Sandwich
+plates[2].variations << vars[1] << vars[2] << vars[3]
+plates[3].variations << vars[4]
+plates[4].variations << vars[0]
+
+
+
+
+
